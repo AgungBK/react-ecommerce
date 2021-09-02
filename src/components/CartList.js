@@ -1,13 +1,13 @@
 import React from 'react';
 import CartItem from './CartItem';
 
-export default function CartColumns() {
+export default function CartList({value}) {
+    const {cart} = value;
     return (
         <div>
-            Ini cart list
-            <CartItem>
-
-            </CartItem>
+            {cart.map(item => {
+            return <CartItem key={item.id} item={item} value={value}/>;
+            })}
         </div>
     );
 };
